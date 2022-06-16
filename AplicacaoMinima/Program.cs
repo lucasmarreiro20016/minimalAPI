@@ -1,5 +1,6 @@
 using AplicacaoMinima;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -27,13 +28,33 @@ using (var scope = app.Services.CreateScope())
 
     app.MapPost("/Post", async (Pessoa pessoa, PessoaContext context) =>
     {
-        context.TAB_PESSOA.Add(pessoa);
-        await context.SaveChangesAsync();
+        try
+        {
+            context.TAB_PESSOA.Add(pessoa);
+            await context.SaveChangesAsync();
+
+            return Results.Ok("Pessoa cadastrada com sucesso!");
+        }
+        catch
+        {
+            return Results.BadRequest("Erro ao cadastrar pessoa");
+        }
     });
 
-    //app.MapDelete("/Delete", (string cpf) => {
-    //    return repositorio.RemoverPessoas(cpf);
-    //});
+    app.MapDelete("/Delete", async (string cpf, PessoaContext context) =>
+    {
+        Pessoa pes = await context.TAB_PESSOA.Where(x => x.CPF.Equals(cpf)).SingleOrDefaultAsync();
+        if (pes is not null)
+        {
+            context.TAB_PESSOA.Remove(pes);
+            await context.SaveChangesAsync();
+
+            return Results.Ok("Removido com sucesso");
+        }else
+        {
+            return Results.NotFound("CPF não encontrado");
+        }
+    });
 
     //app.MapPut("/Put", (Pessoa pessoa) => {
     //    return repositorio.AtualizarPessoas(pessoa);
