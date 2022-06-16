@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\Documents\\Repos\\AplicacaoMinima\\AplicacaoMinima\\AplicacaoMinima.csproj": {}
+    "C:\\Users\\Lucas\\Documents\\GIT\\minimalAPI\\AplicacaoMinima\\AplicacaoMinima.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\Documents\\Repos\\AplicacaoMinima\\AplicacaoMinima\\AplicacaoMinima.csproj": {
+    "C:\\Users\\Lucas\\Documents\\GIT\\minimalAPI\\AplicacaoMinima\\AplicacaoMinima.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\Documents\\Repos\\AplicacaoMinima\\AplicacaoMinima\\AplicacaoMinima.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Documents\\GIT\\minimalAPI\\AplicacaoMinima\\AplicacaoMinima.csproj",
         "projectName": "AplicacaoMinima",
-        "projectPath": "C:\\Users\\lucas\\Documents\\Repos\\AplicacaoMinima\\AplicacaoMinima\\AplicacaoMinima.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\Documents\\Repos\\AplicacaoMinima\\AplicacaoMinima\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Documents\\GIT\\minimalAPI\\AplicacaoMinima\\AplicacaoMinima.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Documents\\GIT\\minimalAPI\\AplicacaoMinima\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.1, )"

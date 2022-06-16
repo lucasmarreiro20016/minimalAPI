@@ -1,14 +1,13 @@
-﻿namespace AplicacaoMinima
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AplicacaoMinima
 {
     public class Pessoa
     {
-        public Pessoa()
-        {
-            Identificador = Guid.NewGuid();
-        }
-        public Guid Identificador { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public string CPF { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        [Key]
+        public int Id_pessoa { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+        public string Email { get; set; }
     }
 }
