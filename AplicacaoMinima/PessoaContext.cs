@@ -18,5 +18,6 @@ namespace AplicacaoMinima
         }
 
         public DbSet<Pessoa> TAB_PESSOA { get; set; }
+        public DbSet<PessoaFilho> TAB_PESSOA_FILHO { get; set; }
     }
 }

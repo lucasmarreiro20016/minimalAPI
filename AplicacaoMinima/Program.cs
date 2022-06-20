@@ -23,7 +23,7 @@ using (var scope = app.Services.CreateScope())
     });
 
     app.MapGet("/Get", async  (PessoaContext context) => {
-        return await context.TAB_PESSOA.ToListAsync();
+        return Results.Ok(await context.TAB_PESSOA.ToListAsync());
     });
 
     app.MapPost("/Post", async (Pessoa pessoa, PessoaContext context) =>
